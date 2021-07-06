@@ -53,14 +53,21 @@ Creation of Service Principal and allowing Service Principal to access workspace
 
 ![Regd_DS](https://user-images.githubusercontent.com/26400438/124589738-f3576e80-de77-11eb-8ff9-7cbe39ed1b52.PNG)
 
-2b. Experiment Completed - The below screen shot shows the status of the experiment as complete after nearly running for 60 minutes.Teh configurations as mentioned in the project guidelines have been used with the time set to 60 min and the concurrent runs to 5
+2b. Experiment Completed - The below screen shot shows the status of the experiment as complete after nearly running for 60 minutes.
+Cluster Choice : A standard_DS12_V2 was chosen with minimum node as  1
+Additional Configuration : Default Exit criterion is set to 60 minutes and concurrency is set to  5
+
 
 ![Experiment_completion](https://user-images.githubusercontent.com/26400438/124589853-12ee9700-de78-11eb-970e-642ff2658142.PNG)
 
 
-2c.  Best Model - The Voting Ensemble model is the best model based on the evaluation criteria used  - Accuracy
+2c.  Best Model - the choice of Best model is based on  the evaluation criteria specified while defining the AutoMl model.**Accuracy** is chosen as the evaluation metric and the Voting Ensemble model has been chosen as the best model in this case.
 
 ![Voting_Ensemble_Best_Model](https://user-images.githubusercontent.com/26400438/124589902-213cb300-de78-11eb-9636-b430a6c16b26.PNG)
+
+
+The performance of the chosen model on other metrics can be seen using the "View Explanations" options.Below snapshot shows that the chosen best model has performed fairly well against other evaluation metrics as well.
+![image](https://user-images.githubusercontent.com/26400438/124603061-29e8b580-de87-11eb-9d9e-e7d7c3d369b1.png)
 
 
 <H5>3.  Deploy the Best Model : </H5>
@@ -71,33 +78,41 @@ Deploying the Voting Ensemble model using ACI
 ![image](https://user-images.githubusercontent.com/26400438/124590399-b6d84280-de78-11eb-84bd-a66c752e448a.png)
 
 
-Status of Deployed Model :Below screenshot shows that the deployed model is healthty
+Status of Deployed Model :Below screenshot shows that the deployed model is healthty.The main intention of the deployment is to be able to use.Azure also helps us with a consume section which will help the users with ways to consume the delpoyed service.
 
 ![image](https://user-images.githubusercontent.com/26400438/124590511-d8392e80-de78-11eb-9b01-b05ec3245c3e.png)
 
 
 <H5>4. Enable Logging : </H5>
 
-Application Insights Enabled using the logs.py and the URI is present
+Application Insights is an application performance management service for web applications that enables us  to do all the monitoring of performance in Azure.
+As a default option the Application Insights is not enabled.The same is enabled using the below command:
+service.update(enable_app_insights=True).
+Upon enabling the same we are able to see that the API URL is available 
 
 ![image](https://user-images.githubusercontent.com/26400438/124590690-0f0f4480-de79-11eb-9fe9-1874a4c4f3c3.png)
 
-
-Output from Logs.py
+Output from Logs.py: Logs  contain the information on which part of the code is executed and what problems have been arisen.
 
 ![image](https://user-images.githubusercontent.com/26400438/124590769-25b59b80-de79-11eb-9e08-c7421c5cc342.png)
 
 
 <H5>5. Swagger Documentation : </H5>
 
-Swagger enabled using the Swagger.sh started code at port - 9000 and the API interface is shown
+
+Swagger is an Interface Description Language for describing RESTful APIs expressed using JSON. (Wiki) .Swagger includes automated documentation, code generation, and test-case generation.Swagger enabled using the Swagger.sh started code at port - 9000 and the API interface is shown
 
 ![Swagger](https://user-images.githubusercontent.com/26400438/124591715-3dd9ea80-de7a-11eb-834e-f19478091486.PNG)
 
 
 <H5>5. Consume Model Endpoints : </H5>
 
-The endpoint.py script is interacting with the API to produce the JSON output.Below are the inputs used for the same
+The endpoint.py script is interacting with the API to produce the JSON output.
+The consume section provides the REST API URL  and the key to access the deployed model
+
+![image](https://user-images.githubusercontent.com/26400438/124604706-d37c7680-de88-11eb-85cb-4e208461eb95.png)
+
+Data is passed in the below fashion using a Python script(endpoint.py)
 
    
          {
@@ -154,6 +169,13 @@ The endpoint.py script is interacting with the API to produce the JSON output.Be
 
 6.a Pipeline Creation
 
+Some of the Pre-requisite steps is as follows :
+
+1. Use the config.Json (Contains Workspace, Resource Group and Subscription details) to  initialize workspace.
+
+2. Create a compute cluster or Use the existing cluster which was created for the AutoML model from Studio
+
+3.Bank marketing Data Set which was registered in the earlier step is being used
 
 
 ![image](https://user-images.githubusercontent.com/26400438/124592279-e8eaa400-de7a-11eb-9d4f-c33198987876.png)
@@ -173,8 +195,6 @@ Pipeline is created with the following AUTOML settings
 
 6.b Pipeline Endpoint
 
-
-
 ![image](https://user-images.githubusercontent.com/26400438/124592745-6adacd00-de7b-11eb-9577-d1f7479a6a23.png)
 
 
@@ -189,6 +209,9 @@ The Pipeline End point is published and active
 
 ![Pub_Pipeline](https://user-images.githubusercontent.com/26400438/124592797-7b8b4300-de7b-11eb-92e0-07f0aa8fd4fb.PNG)
 
+Below is the snapshot showing the published piepline and its status.
+Publishing the pipeline enables a REST endpoint to rerun the pipeline from any HTTP library on any platform.
+![image](https://user-images.githubusercontent.com/26400438/124601548-9793e200-de85-11eb-92e0-f72b08a8516c.png)
 
 6.e Step Runs
 Detailed StepRuns during the creation of the Pipeline
@@ -201,7 +224,7 @@ Detailed StepRuns during the creation of the Pipeline
 
 
 6.f Scheduled for run 
-Intermitted Stage before the status becomes Active
+Intermittent Stage  of the Piepline end point before the status becomes Active
 
 ![image](https://user-images.githubusercontent.com/26400438/124592896-9bbb0200-de7b-11eb-98be-2029b61465e6.png)
 
