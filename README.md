@@ -201,8 +201,12 @@ Detailed StepRuns during the creation of the Pipeline
 
 ![image](https://user-images.githubusercontent.com/26400438/124592279-e8eaa400-de7a-11eb-9d4f-c33198987876.png)
 
+The pipeline has run successfully and he best model can be retrieved using the below 
 
-6.b Published Pipeline Overview
+![image](https://user-images.githubusercontent.com/26400438/124607098-222b1000-de8b-11eb-83a4-be21e1daeb69.png)
+
+
+6.b Publish Pipeline Overview
 
 REST endpoint - Scheduled for run.Intermittent Stage  of the Piepline end point before the status becomes Active
 
