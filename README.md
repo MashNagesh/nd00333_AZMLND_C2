@@ -171,14 +171,13 @@ Data is passed in the below fashion using a Python script(endpoint.py)
 
 Some of the Pre-requisite steps is as follows :
 
-1. Use the config.Json (Contains Workspace, Resource Group and Subscription details) to  initialize workspace.
+A. Use the config.Json (Contains Workspace, Resource Group and Subscription details) to  initialize workspace.
 
-2. Create a compute cluster or Use the existing cluster which was created for the AutoML model from Studio
+B. Create a compute cluster or Use the existing cluster which was created for the AutoML model from Studio
 
-3.Bank marketing Data Set which was registered in the earlier step is being used
+C.Bank marketing Data Set which was registered in the earlier step is being used
 
-
-![image](https://user-images.githubusercontent.com/26400438/124592279-e8eaa400-de7a-11eb-9d4f-c33198987876.png)
+![Bank_Mktng_DS](https://user-images.githubusercontent.com/26400438/124592687-572f6680-de7b-11eb-8f8f-820d69d26eeb.PNG)
 
 
 From Python SDK:
@@ -188,32 +187,8 @@ Pipeline is created with the following AUTOML settings
     "max_concurrent_iterations": 5,
     "primary_metric" : 'accuracy',
     "n_cross_validations": 5
- 
-
-![image](https://user-images.githubusercontent.com/26400438/124592389-0881cc80-de7b-11eb-9158-9f7552512246.png)
 
 
-6.b Pipeline Endpoint
-
-![image](https://user-images.githubusercontent.com/26400438/124592745-6adacd00-de7b-11eb-9577-d1f7479a6a23.png)
-
-
-6.c Bank Marketing Dataset
-
-
-![Bank_Mktng_DS](https://user-images.githubusercontent.com/26400438/124592687-572f6680-de7b-11eb-8f8f-820d69d26eeb.PNG)
-
-
-6.d Published Pipeline Overview
-The Pipeline End point is published and active
-
-![Pub_Pipeline](https://user-images.githubusercontent.com/26400438/124592797-7b8b4300-de7b-11eb-92e0-07f0aa8fd4fb.PNG)
-
-Below is the snapshot showing the published piepline and its status.
-Publishing the pipeline enables a REST endpoint to rerun the pipeline from any HTTP library on any platform.
-![image](https://user-images.githubusercontent.com/26400438/124601548-9793e200-de85-11eb-92e0-f72b08a8516c.png)
-
-6.e Step Runs
 Detailed StepRuns during the creation of the Pipeline
 
 
@@ -222,11 +197,27 @@ Detailed StepRuns during the creation of the Pipeline
 
 ![StepRun](https://user-images.githubusercontent.com/26400438/124592851-8d6ce600-de7b-11eb-9404-cfca0a61a64d.PNG)
 
+![image](https://user-images.githubusercontent.com/26400438/124592389-0881cc80-de7b-11eb-9158-9f7552512246.png)
 
-6.f Scheduled for run 
-Intermittent Stage  of the Piepline end point before the status becomes Active
+![image](https://user-images.githubusercontent.com/26400438/124592279-e8eaa400-de7a-11eb-9d4f-c33198987876.png)
+
+
+6.b Published Pipeline Overview
+
+REST endpoint - Scheduled for run.Intermittent Stage  of the Piepline end point before the status becomes Active
 
 ![image](https://user-images.githubusercontent.com/26400438/124592896-9bbb0200-de7b-11eb-98be-2029b61465e6.png)
+
+The Pipeline End point is published and active
+
+![Pub_Pipeline](https://user-images.githubusercontent.com/26400438/124592797-7b8b4300-de7b-11eb-92e0-07f0aa8fd4fb.PNG)
+
+
+![image](https://user-images.githubusercontent.com/26400438/124601548-9793e200-de85-11eb-92e0-f72b08a8516c.png)
+
+Pipeline Endpoint -  Publishing the pipeline enables a REST endpoint to rerun the pipeline from any HTTP library on any platform.
+
+![image](https://user-images.githubusercontent.com/26400438/124592745-6adacd00-de7b-11eb-9577-d1f7479a6a23.png)
 
 
 <H3> SCREEN CAST </H3>
