@@ -193,6 +193,10 @@ The Pipeline End point is published and active
 6.e Step Runs
 Detailed StepRuns during the creation of the Pipeline
 
+
+![image](https://user-images.githubusercontent.com/26400438/124594492-7929e880-de7d-11eb-88ed-33464f6ceb29.png)
+
+
 ![StepRun](https://user-images.githubusercontent.com/26400438/124592851-8d6ce600-de7b-11eb-9404-cfca0a61a64d.PNG)
 
 
