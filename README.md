@@ -9,11 +9,30 @@ Bank Marketing Dataset :This dataset contains data from a marketing campaign of 
 
 (Source: https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv)
 
-<p>We have used the following to arrive at the best model
+<p>We have used the following to arrive at the best model,deploy and consume the model using  REST Endpoint
 
-1. AutoML method from Studio
+1. AutoML method from Azure ML Studio :
+      
+      *An Automated ML experiment is intiated using the AUTOML setup from the ML Studio.
+   
+      *The Dataset from the above link is registered and a compute cluster is created for running the  model.
+   
+      *Once the model runs and completes the Best model based on the evalution metric is chosen(in our case Voting Ensemble) for deployment.
+   
+      *Once the deployment succeeds we get a Scoring URL and Key  which can be used to interact with the model.
+   
+      *Aplication Insights,Logging and Swagger Dcoumentation can be enabled.
+   
+      *Consume section of the deployed model provides us details on how the users can interact with the model using C#,Python and R.
+   
+2. Create, publish and consume through Pipelines using Python SDK</p> -Pipelines are reusable workflows for machine learning tasks. One benefit of pipelines is increased collaboration since pipeline  can be triggered from external system and enables repeatability and batch processing.Publishing the pipeline enables a REST endpoint to rerun the pipeline from any HTTP library on any platform.REST endpoint from the published pipeline will accept input and parameters.
 
-2. AUTOML config using Python SDK</p>
+      
+      * Using the same dataset and compute cluster a pipeline is created with the AutoML config.The Pipeline runs and reaches completion
+      
+      *The Best model can be retrieved from the Piepline run
+      
+      *The Pipeline once published is available for interaction and a REST ENDPOINT URL link is provided.
 
 <H3> ARCHITECTURE </H3>
 
