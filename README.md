@@ -37,7 +37,7 @@ The focus of the current project is about understaing the steps involved in oper
 
 1.For the illustraion purpose Accuracy has been considered as an evaluation metric.However since the given dataset is an imbalanced dataset Accuracy might not be the right evaluation metric.Normally Weighted AUC scores scores work better for imbalanced dataset.The model performance could be improved by trying out the Weighted AUc scores instead of Accuracy for future runs.
 
-2.Benchmarking for Load Testing/Performance testing   - Load testing helps us answer the below questions around speed of Loading, Numbers of users that can be handled simultaneously,handling Large volumes of data and Scalability issues.Apache Bench is a CLI application for simple load testing which can be used to loadtest the model
+2.Benchmarking for Load Testing/Performance testing   - Load testing helps us answer the  questions around speed of Loading, Numbers of users that can be handled simultaneously,handling Large volumes of data and Scalability issues.Apache Bench is a CLI application for simple load testing which can be used to loadtest our  model in Azure.This could be added and will provide us information everytime endpoint.py is run.
 
 <H3> MAIN STEPS  </H3>
 
