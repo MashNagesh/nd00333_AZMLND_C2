@@ -19,7 +19,7 @@ Bank Marketing Dataset :This dataset contains data from a marketing campaign of 
 
 The following steps have been used to achieve the desired result:
 
-1. Authentication
+1. Authentication - 
 2. Automated ML Experiment
 3. Deploy the best model
 4. Enable logging
@@ -35,9 +35,9 @@ The details of each of these steps are explained along with  Snapshots  in the n
 
 The focus of the current project is about understaing the steps involved in operationalising the models.Some of the other areas that can be considered 
 
-1.Accuracy has been considered as an evaluation metric which is not the right metric for imbalanced datasets.This could have been optimised to arrive at optimal models.
+1.For the illustraion purpose Accuracy has been considered as an evaluation metric.However since the given dataset is an imbalanced dataset Accuracy might not be the right evaluation metric.Normally Weighted AUC scores scores work better for imbalanced dataset.The model performance could be improved by trying out the Weighted AUc scores instead of Accuracy for future runs.
 
-2.Benchmark section to be explored 
+2.Benchmarking for Load Testing/Performance testing   - Load testing helps us answer the below questions around speed of Loading, Numbers of users that can be handled simultaneously,handling Large volumes of data and Scalability issues.Apache Bench is a CLI application for simple load testing which can be used to loadtest the model
 
 <H3> MAIN STEPS  </H3>
 
