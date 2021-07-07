@@ -28,7 +28,7 @@ Bank Marketing Dataset :This dataset contains data from a marketing campaign of 
 2. Create, publish and consume through Pipelines using Python SDK</p> -Pipelines are reusable workflows for machine learning tasks. One benefit of pipelines is increased collaboration since pipeline  can be triggered from external system and enables repeatability and batch processing.Publishing the pipeline enables a REST endpoint to rerun the pipeline from any HTTP library on any platform.REST endpoint from the published pipeline will accept input and parameters.
 
       
-      * Using the same dataset and compute cluster a pipeline is created with the AutoML config.The Pipeline runs and reaches completion
+      *Using the same dataset and compute cluster a pipeline is created with the AutoML config.The Pipeline runs and reaches completion
       
       *The Best model can be retrieved from the Piepline run
       
